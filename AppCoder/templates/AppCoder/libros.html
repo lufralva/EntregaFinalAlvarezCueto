@@ -1,0 +1,34 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>Libros</h1>
+<p>Listado de libros</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <body>
+            {% for l in libros %}
+            
+            <li>{{l}}</li>
+            <button>
+                <a href="{% url 'EliminarLibro' l.titulo %}"> Eliminar</a>
+                <a href="{% url 'EditarLibro' l.titulo %}"> Editar</a>
+            </button>
+            {% endfor %}
+            <br><a href="{% url 'LibroFormulario'%}">Agregar otro libro</a>
+        </body>
+    </body>
+    </html>
+{% endblock %}
+
+
+    
